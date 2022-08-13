@@ -7,11 +7,11 @@ const  {
 
 const postsRouter = Router();
 
-postsRouter.get('/', getAllPosts);
+postsRouter.get('/posts', getAllPosts);
 
-postsRouter.delete('/delete/', deletePost);
+postsRouter.delete('/posts/:id', deletePost);
 
-postsRouter.post('/', createPost);
+postsRouter.post('/posts', createPost);
 
 module.exports = postsRouter;
 
