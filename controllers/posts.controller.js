@@ -8,7 +8,7 @@ const getAllPosts = (req, res) => {
 
 const deletePost = (req, res) => {
     const deleteQuery = 'DELETE FROM posts WHERE id=$1 RETURNING *'
-    const deleteValue = [req.query.id]
+    const deleteValue = [req.params.id]
     db.query(deleteQuery, deleteValue)
     .then(deleteQueryRes => res.send(deleteQueryRes.rows[0]))
     .catch(err => console.log(err.stack))
